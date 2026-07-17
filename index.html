@@ -8,6 +8,24 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <h1>Etch-a-Sketch</h1>
+
+    <button id="reset">Clear Sketch</button>
+
+    <!-- X & Y Inputs -->
+    <div class="inputs-container">
+        <input type="range" id="x-axis" min="1" max="9" step="0.1" value="5">
+        <input type="range" id="y-axis" min="1" max="9" step="0.1" value="5">
+    </div>
+
+    <!-- Sketch Grid -->
+    <div class="sketch-container">
+        <!-- Border Box -->
+        <div id="box"></div>
+
+        <!-- Moving Point -->
+         <div id="point"></div>
+    </div>
     
 </body>
 </html>
