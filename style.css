@@ -33,17 +33,12 @@ p {
 #box {
     position: relative;
     border: 1px solid black; 
+    border-width: 3px;
     height: 1536px;
     width: 1536px;
     background-color: transparent;
     color: rgb(27, 12, 12);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    text-align: center;
-    user-select: none;
+
 }
 
 /* Moving point */
@@ -52,11 +47,11 @@ p {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: goldenrod; /* Provides a clear high-contrast pop against monochrome canvas layout */
-    border: 2px solid black;     /* Changed from white to black for strict cohesive outlining */
+    background-color: goldenrod; 
+    border: 2px solid black;     
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-    display: none;
     transform: translate(-50%, -50%);
-    transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 10;
+    left: 50%;
+    top: 50%;
 }
