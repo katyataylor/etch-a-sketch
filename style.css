@@ -30,7 +30,7 @@ p {
 
 /* Sketch Box */
 
-#box {
+#border-box {
     position: relative;
     border: 1px solid black; 
     border-width: 3px;
@@ -38,7 +38,14 @@ p {
     width: 1536px;
     background-color: transparent;
     color: rgb(27, 12, 12);
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.box{
+    width: 33.333%;
+    height: 33.333%;
+    border: 0.5px solid gray;
 }
 
 /* Moving point */
