@@ -34,11 +34,12 @@ p {
     flex-wrap: wrap;
     border: 1px solid black; 
     border-width: 3px;
-    height: 1536px;
     max-width: 1536px;
     width: 100%;
+    aspect-ratio: 1/1;
     background-color: transparent;
     color: rgb(27, 12, 12);
+    margin: 0 auto;
 }
 
 .grid-square{
@@ -47,21 +48,6 @@ p {
 }
 
 .grid-square:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.1);
     box-shadow: inset rgba (0, 0, 0, 0.1);
-}
-
-/* Moving point */
-#point {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: goldenrod; 
-    border: 2px solid black;     
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    left: 50%;
-    top: 50%;
 }

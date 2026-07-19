@@ -17,7 +17,7 @@ function createGrid (){
 
     // Grid calculation logic
     let totalSquares = gridInput * gridInput;
-    let squareSize = 100 / gridInput;
+    let squareSize = 100 /gridInput;
 
     for (let i = 0; i < totalSquares; i++) {
 
@@ -25,8 +25,8 @@ function createGrid (){
 
         // Add the CSS class styling & calculate dimensions
         square.classList.add('grid-square');
-        square.style.width = `"${squareSize}px + " %`;
-        square.style.height = `"${squareSize}px + " %`;;
+        square.style.width = `${squareSize}%`;
+        square.style.height = square.style.width;
 
         // Append the newly created div inside container
         container.appendChild(square);
