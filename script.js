@@ -2,7 +2,7 @@
 const container = document.querySelector('#container');
 
 // Run a loop 256 times to create a 16x16 layout
-for (let i = 0; i < 256; i++) {
+for (let i = 0; i < 16; i++) {
     const square = document.createElement('div');
     
     // Add the CSS class for styling and dimensional math
