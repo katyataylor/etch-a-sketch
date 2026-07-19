@@ -30,7 +30,7 @@ p {
 
 /* Sketch Box */
 
-#border-box {
+#container {
     position: relative;
     border: 1px solid black; 
     border-width: 3px;
@@ -42,7 +42,7 @@ p {
     flex-wrap: wrap;
 }
 
-.box{
+.grid-square{
     width: 25%;
     height: 25%;
     border: 0.5px solid gray;
