@@ -1,10 +1,16 @@
 // Select the container div
 const container = document.querySelector('#container');
 
+// Button variables & event listeners
+const gridSizeBtn = document.querySelector('#gridSizeBtn');
+const clearBtn = document.querySelector('#clearBtn');
+
+gridSizeBtn.addEventListener('click', createGrid);
+clearBtn.addEventListener('click', clearGrid);
+
 function clearGrid() {
 
     container.innerHTML = ''; //Clear existing squares
-
 }
 
 // Dynamically change grid
@@ -37,9 +43,3 @@ function createGrid (){
         container.appendChild(square);
     }
 }
-
-createGrid();
-
-// Button variables
-const gridSizeBtn = document.addEventListener("click", createGrid);
-const clearBtn = document.addEventListener("click", clearGrid);
