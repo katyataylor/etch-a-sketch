@@ -7,8 +7,9 @@ const clearBtn = document.querySelector("#clearBtn");
 let isDrawing = false;
 
 function clearGrid() {
-
-    container.innerHTML = "";
+        
+    const squares = document.querySelectorAll(".grid-square");
+    squares.forEach(square => square.style.backgroundColor = "transparent");
 }
 
 function createGrid() {
