@@ -1,45 +1,89 @@
-// Select the container div
-const container = document.querySelector('#container');
+// Elements
+const container = document.querySelector("#container");
+const gridSizeBtn = document.querySelector("#gridSizeBtn");
+const clearBtn = document.querySelector("#clearBtn");
 
-// Button variables & event listeners
-const gridSizeBtn = document.querySelector('#gridSizeBtn');
-const clearBtn = document.querySelector('#clearBtn');
-
-gridSizeBtn.addEventListener('click', createGrid);
-clearBtn.addEventListener('click', clearGrid);
+// Track drawing state
+let isDrawing = false;
 
 function clearGrid() {
 
-    container.innerHTML = ''; //Clear existing squares
+    container.innerHTML = "";
 }
 
-// Dynamically change grid
-function createGrid (){
+function createGrid() {
+    let gridInput = parseInt(prompt("Enter grid size (e.g. 16 for a 16x16 grid):"));
 
-    // Ask for grid number input
-    let gridInput = parseInt(prompt("Enter grid size (e. g. 16 for a 16x16 grid):"));
-
-    // Fallback to 16x16 if input is invalid/too large
+    // Fallback if input is invalid
     if (!gridInput || gridInput < 1 || gridInput > 100) {
         gridInput = 16;
     }
 
-    container.innerHTML = ''; //Clear existing squares
+    container.innerHTML = ""; // Clear existing squares
 
-    // Grid calculation logic
     let totalSquares = gridInput * gridInput;
-    let squareSize = 100 /gridInput;
+    let squareSize = 100 / gridInput;
 
     for (let i = 0; i < totalSquares; i++) {
-
-        const square = document.createElement('div');
-
-        // Add the CSS class styling & calculate dimensions
-        square.classList.add('grid-square');
+        const square = document.createElement("div");
+        square.classList.add("grid-square");
         square.style.width = `${squareSize}%`;
-        square.style.height = square.style.width;
+        square.style.height = `${squareSize}%`;
 
-        // Append the newly created div inside container
+        // 1. Start drawing when clicking down on a square
+        square.addEventListener("pointerdown", (e) => {
+            isDrawing = true;
+            square.style.backgroundColor = "black";
+            e.preventDefault(); // Prevents accidental drag-and-drop glitches
+        });
+
+        // 2. Color squares when dragging the pointer into them
+        square.addEventListener("pointerenter", () => {
+            if (isDrawing) {
+                square.style.backgroundColor = "black";
+            }
+        });
+
         container.appendChild(square);
     }
 }
+
+// 3. Stop drawing when the user releases the mouse anywhere on the page
+window.addEventListener("pointerup", () => {
+    isDrawing = false;
+});
+
+// Event Listeners for buttons
+gridSizeBtn.addEventListener("click", createGrid);
+clearBtn.addEventListener("click", clearGrid);
+
+// Initialize a default 16x16 grid on page load without showing a prompt
+// By bypassing createGrid() here, we avoid the immediate prompt pop-up
+function initDefaultGrid() {
+    container.innerHTML = "";
+    let totalSquares = 16 * 16;
+    let squareSize = 100 / 16;
+
+    for (let i = 0; i < totalSquares; i++) {
+        const square = document.createElement("div");
+        square.classList.add("grid-square");
+        square.style.width = `${squareSize}%`;
+        square.style.height = `${squareSize}%`;
+
+        square.addEventListener("pointerdown", (e) => {
+            isDrawing = true;
+            square.style.backgroundColor = "black";
+            e.preventDefault();
+        });
+
+        square.addEventListener("pointerenter", () => {
+            if (isDrawing) {
+                square.style.backgroundColor = "black";
+            }
+        });
+
+        container.appendChild(square);
+    }
+}
+
+initDefaultGrid();
