@@ -17,6 +17,7 @@ h1 {
     font-size: 2.2rem;
     letter-spacing: 2px;
     margin-bottom: 20px;
+    margin-top: 48px;
 }
 
 p {
@@ -34,7 +35,7 @@ p {
     flex-wrap: wrap;
     border: 1px solid black; 
     border-width: 3px;
-    max-width: 1536px;
+    max-width: 700px;
     width: 100%;
     aspect-ratio: 1/1;
     background-color: transparent;
