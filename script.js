@@ -60,7 +60,6 @@ clearBtn.addEventListener("click", clearGrid);
 // Initialize a default 16x16 grid on page load without showing a prompt
 // By bypassing createGrid() here, we avoid the immediate prompt pop-up
 function initDefaultGrid() {
-    container.innerHTML = "";
     let totalSquares = 16 * 16;
     let squareSize = 100 / 16;
 
