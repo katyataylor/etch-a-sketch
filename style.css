@@ -16,16 +16,23 @@ body {
 h1 {
     font-size: 2.2rem;
     letter-spacing: 2px;
-    margin-bottom: 20px;
-    margin-top: 48px;
+    margin: 96px auto 48px;
 }
 
-p {
-    font-style: italic;
-    color: #333;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
+button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: large;
+    background-color: #fafafa;
+    color: black;
+    width: 160px;
+    padding: 8px 12px;
+    margin: 0 24px 48px 24px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: rgba (0, 0, 0, 0.1);
 }
 
 /* Sketch Box */
@@ -50,5 +57,5 @@ p {
 
 .grid-square:hover {
     background-color: rgba(0, 0, 0, 0.1);
-    box-shadow: inset rgba (0, 0, 0, 0.1);
+    box-shadow: rgba (0, 0, 0, 0.1);
 }
